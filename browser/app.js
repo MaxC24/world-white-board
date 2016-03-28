@@ -4,8 +4,6 @@ socket.on('connect', function(){
 	console.log('I have made a persistent two-way connection to the server!');
 });
 
-
-
 window.whiteboard.on('draw', function(start, end, color){
 	socket.emit('drawing', start, end, color);
 	//console.log('payLoad', payload);
@@ -25,8 +23,3 @@ socket.on('refreshdraw', function(cordArray){
 		window.whiteboard.draw(ele.start, ele.end, ele.color);
 	});
 });
-
-// cordArray.forEach(function(ele){
-// 	console.log('im inside the forEach!');
-// 	socket.emit('drawing', ele.start, ele.end, ele.color);
-// });
