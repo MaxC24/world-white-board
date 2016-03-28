@@ -6,7 +6,6 @@ socket.on('connect', function(){
 
 window.whiteboard.on('draw', function(start, end, color){
 	socket.emit('drawing', start, end, color);
-	//console.log('payLoad', payload);
 });
 
 socket.on('drawing', function(start, end, color){
